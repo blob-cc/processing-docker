@@ -1,0 +1,23 @@
+{
+    "name": "Processing Development",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "java.home": "/usr/lib/jvm/java-11-openjdk-amd64"
+    },
+    "extensions": [
+        "vscjava.vscode-java-pack",
+        "github.copilot",
+        "ms-vscode.cpptools"
+    ],
+    "forwardPorts": [
+        5601
+    ],
+    "postCreateCommand": "processing-java --sketch=/workspace/examples/ExampleSketch --run",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ],
+    "remoteUser": "root"
+}
