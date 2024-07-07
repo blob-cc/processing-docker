@@ -77,3 +77,15 @@ Contributions to this project are welcome! Please submit issues and pull request
 ## License
 
 Specify the license under which the project is made available.
+
+
+
+## Resources
+
+- https://github.com/processing/processing
+- https://github.com/processing/processing-library-template
+
+### Plugins
+
+- https://github.com/yconst/ReactP5
+- https://github.com/atduskgreg/opencv-processing
