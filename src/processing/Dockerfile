@@ -3,7 +3,13 @@
 
 # Base Image
 # =============================================================================
-FROM ubuntu:latest
+
+# FROM ubuntu:latest
+FROM ubuntu:24.04
+
+
+# System Dependencies
+# =============================================================================
 
 # Install dependencies and utilities
 RUN apt-get update && apt-get install -y \
@@ -18,6 +24,9 @@ RUN apt-get update && apt-get install -y \
     libgl1-mesa-dri \
     && rm -rf /var/lib/apt/lists/*
 
+# Processing Setup
+# =============================================================================
+
 # Install Processing
 WORKDIR /opt
 RUN wget https://download.processing.org/processing-4.0.1-linux-x64.tgz -O processing.tgz \
@@ -25,9 +34,6 @@ RUN wget https://download.processing.org/processing-4.0.1-linux-x64.tgz -O proce
     && mv processing-4.0.1 processing \
     && rm processing.tgz
 ENV PATH="/opt/processing:$PATH"
-
-# Configure environment for X11 forwarding to enable GUI
-ENV DISPLAY=host.docker.internal:0.0
 
 # Install Processing libraries
 WORKDIR /opt/processing/modes/java/libraries
@@ -39,3 +45,10 @@ RUN wget http://www.sojamo.de/libraries/controlP5/releases/latest/controlP5.zip 
     && unzip controlP5.zip && rm controlP5.zip
 RUN wget http://toxiclibs.org/downloads/toxiclibs-complete.zip \
     && unzip toxiclibs-complete.zip && rm toxiclibs-complete.zip
+
+
+# Display Setup
+# =============================================================================
+
+# Configure environment for X11 forwarding to enable GUI
+ENV DISPLAY=host.docker.internal:0.0
