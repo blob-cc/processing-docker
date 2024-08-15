@@ -70,15 +70,21 @@ Refer to the respective library documentation for detailed usage instructions.
 - **GUI not Displaying**: Ensure your X Server is configured to allow connections from `localhost`.
 - **Library Errors**: If a library fails to load, verify that it's correctly installed in the `/opt/processing/modes/java/libraries` directory.
 
-## Contributing
+---
 
-Contributions to this project are welcome! Please submit issues and pull requests with your improvements.
+## Colophon
 
-## License
+Made with ❤️ by **[Scape Agency](https://www.scape.agency)**
 
-Specify the license under which the project is made available.
+### Contributing
 
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
+### License
+
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for details.
+
+---
 
 ## Resources
 
